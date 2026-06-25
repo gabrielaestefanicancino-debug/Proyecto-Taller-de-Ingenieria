@@ -1,0 +1,24 @@
+{
+  "name": "Biblioteca de Resenas - CRUD PHP + MySQL",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "web",
+  "workspaceFolder": "/var/www/html",
+  "forwardPorts": [8085],
+  "portsAttributes": {
+    "8085": {
+      "label": "App Biblioteca (PHP)",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postCreateCommand": "echo 'Esperando a que MySQL inicialice...' && sleep 10 && echo 'Listo. Abre el puerto 8085.'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-mysql"
+      ]
+    }
+  },
+  "shutdownAction": "none"
+}
